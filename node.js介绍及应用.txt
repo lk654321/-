@@ -1,0 +1,71 @@
+node.js是一个基于Chrome v8引擎的javascript 运行环境。
+         其实 node 就是用 javascript 语言写 **后端**
+Node.js使用了一个事件驱动、非阻塞式 I/O的模型，使其轻量又高效。（由c＋＋语言编写的）
+Node.js的包管理器npm，成为世界上最大的开放源代码的生态系统。 简单说：编写高性能网络服务器的javascipt工具包（用于js开发服务端程序） 单线程、异步、事件驱动
+
+NPM：全称是Node Package Manager，是随同NodeJS一起安装的包管理和分发工具，它很方便让JavaScript开发者下载、安装、上传以及管理已经安装的包
+
+nodejs的特点： 快、耗内存多
+                   核心：ECMAscript
+
+nodejs可以做什么：node.js可以解析js代码（没有浏览器安全级别的限制），提供很多系统级别的api，如：文件的读写、进程的管理、网络通信。
+
+-------------------------------------------------------------------------------------------------------------
+ 前端路由，后端路由 ，vue react单页面应用的
+
+node -v查看版本号 看是否安装好
+node  进入node执行环境 写js代码
+使用node执行Js文件：
+1.在vscode选中文件，右键 在终端中打开
+2、可以选择文件名，进入文件资源管理器，在上方路径中 写入cmd 
+3、在windos10下面搜索框里，输入cmd ，以管理员身份打开
+ 
+模块化开发（commonjs），可以引入js文件
+let obj={}   let obj=function()
+调用：module.exports=obj  //暴露 模块    在01.js中写
+引用：let obj=require('./01')    // 02.js中 ，这就可以接受01中的结果
+
+npm安装模块
+
+npm 的使用：
+1、 新建项目文件夹进入cd  tb文件夹，
+        或： tb,在这文件下打开终端，输入npm init -y：初始化，会引导你创建一个package.json文件，包括名称、版本、作者等信息 
+2、 npm i axios --save  本地安装运行环境axios模块，同时把信息写入到package.json里
+
+3、 npm 第三方模块 在当前项目中使用                       readhub.cn 新闻网站
+      let axios=require('axios')
+     axios.get('url').then(res=>{
+      console.log(res.data)
+     })           然后在终端中打开
+
+4、 npm i nrm -g   全局安装   全局都可以使用这个命令
+     在终端中使用 nrm的命令  nrm -V可以查看版本号     
+      nrm ls 查看不同的网址，就是服务器源    利用 nrm use taobao来选不同网址 就设置成了淘宝服务器
+
+5、 nodemon 使用：
+    Nodemon，它会监测项目中的所有文件，一旦发现文件有改动，Nodemon 会自动重启应用
+    也要全局安装：  npm i nodemon -g
+    安好以后想让那个文件自动执行，就:  nodemon 02.js     也可以直接nodemon 
+
+
+什么是nrm                     ctrl+c 可以在一个文件中结束终端，然后在开启另一个终端
+nrm 是一个 npm 源管理器，允许你快速地在 npm 源间切换
+
+
+http加载内置模块    能解析http协议
+let http =require('http')
+http.createServer((req,res)=>{     //  创建一个服务器
+  con('收到了客户的请求')
+})
+server.listen(3000,'localhost'，function(){
+ 
+}) //监听主机上的端口
+
+MVC到前后端，是一种经典的设计模式
+模型-视图（html）-控制器
+前后端分离： 前端负责开发页面，通过接口（ajax）获取数据，采用dom操作对页面进行数据绑定，最终是由前端把页面渲染出来。'
+
+
+
+
+ 

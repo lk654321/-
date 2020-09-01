@@ -1,0 +1,21 @@
+ json数据：长得非常像js中对象的字符串，是一种轻量级的数据交换格式
+     ： let  josnstr='{"username":"zhangsan","age":18 }'
+                   属性名必须要有双引号“”，属性值是字符串的话，也要用“”
+              let obj =JSON.parse(josnstr)
+             console.log(obj['age'])   // 可以使用类似数组下标的方式获取属性值
+
+     let  josnsrt2=[{“属性名”：“属性值” },{“属性名”：“属性值”},{“属性名”：                                                                                             “属性值”} ]
+      方法：   JSON.parse( json字符串 )----解析json
+                 json.stringify( 对象或数组 )-----转json
+
+
+  localstorage,  必须以json字符串形式去存
+                          数组或对象 先转json在存
+       存： localstorage.setItem( "key","value" )
+       读 取：localstorage.getItem("key')      取出来的都是字符串形式，需要在转一下
+       删:      localstorsge.removeItem( "key")
+       清空：                    clear()
+        改：  同样的在存一下
+         
+      存的话，   json.stringify  转成json存
+      取出之后 在用，   JSON.parse     在解析json  成对象或数组

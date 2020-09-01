@@ -1,0 +1,14 @@
+ 块级元素左右居中：margin: 0 auto
+内联元素              ：text-aligin：center
+
+
+
+ photoshop 切图：
+             ctrl+c:对选中区域进行复制   嗑炮啥意思
+             ctrl+n:进行新建图层操作
+             ctrl+v:将复制好的图层进行粘贴
+
+自适应布局：
+      利用容器宽为百分比或auto的方式来实现
+
+小手：cursor:pointer.

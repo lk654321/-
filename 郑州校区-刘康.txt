@@ -1,0 +1,55 @@
+
+三、填空
+1、font-size:20px;
+2、display:gird;
+3、-webkit-
+4、box-sizing:border-box  
+ 弹性盒子padding和border的值就不会在影响元素的宽高,
+5、flex-direction
+6、块状元素、行内元素、行内块元素
+7、value
+8、建立关联性
+
+四、简答与代码编程
+1、浮动元素：float除none以外的值；绝对定位：position:absolute
+     固定定位：position:fixed
+2、  4大内核：trident 代表作：IE   ；  gecko代表作：Mozilla；
+                      webkit 代表作：苹果 谷歌； blink 代表作：欧朋
+3、 1、给父级元素加一个固定高度。缺点：会影响后面元素的布局。
+       2、给父级元素加overflow:hidden。缺点：会把父元素以外的元素隐藏掉。
+        3、在子元素下面设置一个空标签<span></span>，然后给span:clear{clear:both;}
+              缺点：造成元素的多余
+       4、万能清浮动发：after伪类
+             ：after{content=“”;clear:both;display:block;height:0;overflow:hidden;visitility:hidden;}
+ 4、 标签元素选择符：target{} ；
+       作用：当该元素被相关的url指向时候，做的样式变换。作a的链接用，绑定id。#--
+5、    第一种： <style>
+                        *{margin: 0;padding: 0;}
+                        .box{display: flex;}
+                       .box .con{margin: 0 auto;}
+                        </style>          
+        第二种：  <style>
+                         *{margin: 0;padding: 0;}
+                          .box{ display: flex;justify-content: center;align-items: center;}
+                           </style>
+
+6、箭头向左30px像素的红色箭头
+        <style>
+      
+            p{
+                border-top: 30px solid transparent; border-left: 30px solid transparent;
+                border-bottom: 30px solid transparent;border-right: 30px solid red;}
+    </style> 
+
+7、<style>
+        *{margin: 0;padding: 0;}
+        #box{width: 300px;height: 300px;position: relative;margin: 50px auto;}
+        .box1{width: 300px;height: 300px;background: darksalmon;font-size: 30px;line-height: 300px;
+                  text-align: center;color: #fff;position: absolute;
+                  backface-visibility: hidden;transition: 1s;}
+                  
+         .box2{width: 300px;height: 300px;background: blue;font-size: 30px;line-height: 300px;position: absolute;
+             text-align: center;color: #fff;  transform: rotateY(180deg);backface-visibility: hidden;transition: 1s;} 
+         #box:hover .box1{transform: rotateY(180deg);} 
+         #box:hover .box2{transform: rotateY(360deg);}      
+    </style>

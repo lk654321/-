@@ -1,0 +1,135 @@
+ express框架：   是有 路由和中间件构成的框架
+                      快速地搭建一个完整功能的网站
+Express 框架核心特性：可以设置中间件（就是一个函数）来响应 HTTP 请求
+插件：路由
+
+端口：3000.      http:默认80    https：默认443
+
+
+命令： nodemon 自动刷新
+
+ 
+安装完之后，   配置建立一个服务器：express()
+终端中输入 node app.js 就可以启动项目
+在浏览器中输入 localhost:3000 就发起了一个get请求，就能看到服务器返回的数据
+
+
+打开postman软件，就是一个接口测试工具， 快速的测试接口里的内容能不能用
+1、点new按钮，collections像是创建一个文件夹，
+                         request  这是选请求方式
+
+npm脚本：    
+ 可以在里面配置自己的命令  如下：“start”和“dev”都是自己配置的
+package.json文件 在scripts 里面增加一个配置
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js",
+    "dev":"nodemon app.js"
+  },
+
+在package.json  找script命令   npm run查找命令
+    也可以在里面自己配置命令
+
+进入文件   npm start  启动    或  在终端中     npm  run dev      查找启动命令
+
+### 挂载中间件  
+ app.use(中间件监听的路径，function(req,res,next ){
+                next()下一步   
+})
+
+
+导出路由配置：  module.exports = router（起的变量名）;
+在引用：  require(./路径  )
+
+
+路由中间件：
+封装 js  到时在引入 这样方便
+路由：前端访问不同的地址，后端要返回不同的数据，这就叫后端路由
+
+获取路由中间件：
+var router = express.Router()/  router属于内置的中间件，不用安装
+
+params:在url里面
+body:在请求体里
+
+  
+get请求获取：        params 中写     是在url中 
+     req.query  获取url中？后面的参数，自动转为对象
+
+post 请求， 要先在配置路由前，加上
+       app.use( express.urlencoded()）  内置好的中间件  在app.js中加，去解析请求体
+      req.body 获取  请求体中 ，post请求 要解析一下
+
+delete请求获取     这是在url中 地址
+          （“./:id”,funcyion(req,res)）
+        req.params获取
+
+put      在body中修改，   /：id2       修改id为2的数{title:你好}
+      （“./:id”,funcyion(req,res)）
+          req.params获取             body中传 
+
+获取get   上传post      修改put    删除delete
+
+获取动态id          req.params   {id:1}     req.params.id    1
+  readhub.com  新闻资源网站
+
+设置静态资源中间件：
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'public')));后面是返回的路径地址
+在根目录下面创建public文件夹，里面可以存放静态资源 css，js，html，图片等资源
+一旦有请求过来，会先到请求资源文件夹里面查找看看有没有静态文件，有的话就直接返回静态文件
+// 比如 访问 localhost:3000/1.js  就会去 public下面找1.js文件，根据路径都可以找到
+
+
+
+
+express脚手架创建项目：
+express内置了很多中间件，我们一个一个配置比较麻烦，并且做一个后端项目，我们可以需要一些别的中间件，比如说日志插件，错误处理插件等等
+ 全局安装：  npm install express-generator -g
+创建项目： express  -e  express-demo3（文件夹名）装好后里面自动创建4个文件夹
+                         bin（放服务器） 、public、routes、views（放模板引擎）  和app.js   将东西分别放入这4个文件夹中
+   create : project_name\public\  存放静态资源css，图片等
+   create : project_name\routes\  存放路由模块
+   create : project_name\views\    存放html模板 视图
+   create : project_name\app.js    express 配置
+   create : project_name\package.json   
+   create : project_name\bin\www  服务器启动配置   执行目录
+
+
+
+
+解决跨域访问接口：
+在你要访问的文件里app.js，加上一段响应头
+  就可以设置跨域访问了，放在接口路由得前面
+
+想要从新启动---》npm app.js          npm run dev  就可以从新执行了
+
+EJS什么是模板引擎：
+模板引擎（Template Engine）是一个将页面模板和要显示的数据结合起来生成 HTML 页面的工具。
+就是使用模板引擎可以产生html页面，后端直接产生页面，前端页面和后端程序混合在了一起（前后端不分离）
+
+**ejs 语法**：
+ejs 的标签系统非常简单，它只有以下三种标签：
+<% code %>：code是我们的JavaScript 代码。
+<%= code %>：显示替换过 HTML 特殊字符的内容。（html不会被浏览器解析）
+<%- code %>：显示原始 HTML 内容。（html会被浏览器解析
+
+
+上传文件  
+ 全局安装： npm i multer -S
+注意：需要在public/images/ 下面创建 upload文件夹
+
+?          挂载中间件 要在路由之前挂载
+
+
+
+后端渲染（ssr）和前端渲染（bsr）
+
+
+什么是token：在计算机身份认证中是令牌（临时）的意思
+                。一般作为邀请、登录系统使用
+使用Token的目的：Token的目的是为了减轻服务器的压力，减少频繁的查询数据库，使服务器更加健壮。
+JWT 代表 JSON Web Token ，它是一种用于认证头部的 token 格式。这个 token 帮你实现了在两个系统之间以一种安全的方式传递信息
+Cookie 是一些存储在客户端的信息
+**session会话 是存在服务端的
+

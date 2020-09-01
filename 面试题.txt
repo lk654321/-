@@ -1,0 +1,58 @@
+清除浮动
+元素居中
+基本数据类型包装类
+原型及原型链
+函数对象： function a(){}//   var b =new funtion(){}//  var c=function(){}
+js内置对象： date   math   number  string   boolean  array  object
+                   regexp  error(报错)   e6新增有 set
+
+react开发
+
+正则 的 贪婪模式
+
+面向对象：封装，继承，多态
+
+构造函数 A（）{}B       call  applay
+A.prototype =new B() 原型指向实例
+ 继承是指子类可以复用父类的属性和方法
+Java的继承通过extends关键字实现，实现继承的类称为子类，被继承的类称为父类（基类或超类）
+设计模式：
+冒泡排序：
+数组深拷贝：
+对象封装那些事件，：
+自定义组件：
+
+
+
+key就是一个标记做dom节点时，
+
+
+安装vue-cli脚手架
+ 一、npm i vue-cli -g     :安装2版本
+ 二、vue init webpack （目录项目名）          ： 搭建脚手架
+ 
+  tests   测试代码写这
+
+三、cnpm i    安装node-modules      build.js 打包用的  config  配置文件
+            四、   打包 npm run dev   项目启动        //localhost:8080 会出现这个
+                    五、      在index。html中引入你清除样式的css文件路径
+              
+                 static 放静态资源  reset.css 放着里面  公共的方这里面大文件
+                   components   放公共组件 hear footer.vue   router-link 实现路由跳转
+                                                                                   tag="li"标签名
+                                  组件放 assets里
+           
+               在index.js里改
+                   router  路由
+
+                    开发时 都是在src里面
+
+        入口文件       main.js   
+           APP.vue是根组件 谁都可以用     import  footer from '/路径' 引入组件
+
+         cnpm i axios --save     安装 接口请求
+                 在index.js 配置vue 跨域代理      然后在 npm run dev  重启
+
+
+
+npm i @vue/cli -g   最新版

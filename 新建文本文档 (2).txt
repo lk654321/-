@@ -1,0 +1,14 @@
+
+
+src---views   三个文件夹，对应下面三个组件
+
+全局样式    放在static里面，css  js    ,,,在index引入
+
+
+公共组件放在 components  里面，header   footer 
+     
+mint-ui 
+element - ui
+安装  npm i mint-ui --save
+ 
+                $http,,简明执意
